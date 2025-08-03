@@ -1,0 +1,32 @@
+<script>
+
+    
+        //var username = prompt("Enter your name");
+        //var age = parseInt(prompt("Enter you age"));
+
+        //var msg1 = ("Hello ! " + username + " " + "you will be"+ " " + (age+1) + "in the next year" +".." + "<br>" );
+        //var msg2 =  (`Hello ! ${username} you will be ${age+1} in the next year... `);
+   
+        //document.write(msg1);
+        //document.write(msg2);
+
+
+        var title = prompt("Enter title");
+        var loginName = prompt("Enter your login Name", "Username", "Email" , "Date");
+        var loginType = prompt("Enter your login type", "Text" , "Email", "Date");
+        var login = `
+                <h2> ${title} </h2>
+                <dl>
+                        <dt>${loginName}</dt>  
+                        <dd> <input type ="${loginType}"></dd>
+                </dl>
+
+                <button>Login</button>
+
+
+        `;
+
+        document.write(login);
+   
+
+</script>

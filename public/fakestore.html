@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Store</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script>
+        function bodyload(){
+            fetch("https://fakestoreapi.com/products")
+            .then(function(res){
+                return res.json();
+            })
+            .then(function(products){
+                for(var product of products){
+                var div = document.createElement("div");
+                div.className = "card m-4 p-4";
+                div.style.width = "250px";
+                div.innerHTML = `
+                    <img src=${product.image} height ="150" class="card-img-top">
+                    <div class="card-header" style="height:150px">
+                        <p>${product.title}</p>
+                    </div>
+
+                    <div class="card-body">
+                        <dl>
+                            <dt>Price</dt>
+                            <dd>${product.price}</dd>
+        
+                            <dt>Rating</dt>
+                            <dd>${product.rating.rate}[${product.rating.count}]</dd>
+                        </dl>
+                    </div>
+                `;
+            
+                    document.querySelector("main").appendChild(div);
+                }
+            })
+        }
+    </script>
+</head>
+<body class="container-fluid" onload="bodyload()">
+    <h2>Fakestore Products</h2>
+    <main class="d-flex flex-wrap">
+
+    </main>
+    
+</body>
+</html>

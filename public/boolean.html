@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+        function StockChanged(){
+            var stockCheckBox = document.getElementById("Stock");
+            var lblStock = document.getElementById("lblStock");
+            
+            lblStock.innerHTML = (stockCheckBox.checked)?"Available" : "Out of Stock";
+            
+        }
+
+        function SortClick(){
+            var span = document.querySelector("button span");
+            span.className = (span.className=="bi bi-sort-alpha-down") ? "bi bi-sort-alpha-up" : "bi bi-sort-alpha-down";
+        }
+
+        function VerifyName()
+        {
+            var txtName = document.getElementById("txtName");
+            var btnRegister = document.getElementById("btnRegister");
+
+            if(txtName.value==""){
+                btnRegister.disabled = true;
+            }else{
+                btnRegister.disabled = false;
+            }
+
+        }
+        
+    </script>
+</head>
+<body>
+        <h2>Your Name</h2>
+        <input type="text" id="txtName" onblur="VerifyName()"> <button disabled id="btnRegister">Submit</button>
+        <h2>Check Box Toggle</h2>
+        <input type="checkbox" onchange="StockChanged()" id="Stock"> <span id="lblStock">Out of Stock</span>  
+
+        <h2>Button Toggle</h2>
+        <button id="sort" onclick="SortClick()">
+            <span class="bi bi-sort-alpha-down"></span>
+        </button>
+</body>
+</html>

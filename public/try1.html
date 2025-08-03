@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var data = [
+            { Topic: "JavaScript", Description: "JavaScript is a language"},
+            {Topic: "HTML", Description: "It is a markup language"}
+        ]
+
+        function bodyload(){
+            for(item of data){
+                var dt = document.createElement("dt");
+                var dd = document.createElement("dd");
+                
+                dt.innerHTML = item.Topic;
+                dd.innerHTML= item.Description;
+
+                document.querySelector("dl").appendChild(dt);
+                document.querySelector("dl").appendChild(dd);
+                
+            }
+        }
+    </script>
+</head>
+<body onload="bodyload()">
+        <dl>
+            
+        </dl>
+</body>
+</html>

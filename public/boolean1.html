@@ -1,0 +1,32 @@
+<script>
+    var x = "true";
+    var y = (x=="true")?true:false;
+    document.write(`x is ${typeof x}<br>
+    Y is ${typeof y}
+    `);
+
+    var z;
+    document.write(`<br>z=${z} <br>`);
+
+    var name = "Samsung-Tv";
+    //var price = "10,000.33";
+    var price = 0;
+
+   // if(price==undefined) //not good method
+    //{
+       // document.write("Name:-" + name);
+        
+    //}else{
+       // document.write(`Name =${name}<br> Price = ${price}`);
+    //}
+
+    if(price)   //!undefined
+    {
+        document.write(`Name:- =${name} <br> Price = ${price}`);
+        
+    }else{
+        document.write(`Name =${name}`);
+    }
+
+
+</script>

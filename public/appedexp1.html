@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function AddOption(){
+        var categories = ["All", "Electronics", "Footwear" , "Fashion"];
+        document.querySelector("select").innerHTML = "";
+        for(var item of categories){
+            var option = document.createElement("option");
+            option.text = item;
+            option.value = item;
+            document.querySelector("select").appendChild(option);
+
+            var li = document.createElement("li");
+            li.innerHTML = item;
+            document.querySelector("ol").appendChild(li);
+        }
+    }
+    </script>
+</head>
+<body>
+
+
+    <button onclick="AddOption()">Add Option</button>
+
+    <select>
+
+    </select>
+
+    <h2>Categories</h2>
+    <ol>
+
+    </ol>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ClickMe(){
+            var pic = document.createElement("img");
+            pic.width = "200";
+            pic.height = "200";
+            pic.border = "2";
+            pic.src = "../public/images/india.jpg";
+            document.getElementById("container").appendChild(pic);
+
+        }
+
+        function AddMe(){
+            var option = document.createElement("option");
+            option.text = "Delhi";
+            option.value = "Delhi";
+            document.querySelector("select").appendChild(option);
+        }
+    </script>
+
+</head>
+<body>
+            <button onclick="ClickMe()">AddImage</button>
+            <button onclick="AddMe()">SelectMe</button>
+            <div id="container">
+
+            </div>
+
+            <select>
+
+
+            </select>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+    <script>
+        function SubmitClick(){
+            var username = document.getElementById("UserName").value;
+            var userError = document.getElementById("UserError");
+
+            if(username==""){ 
+                userError.innerHTML ="Username is required" .fontcolor('red');
+            }
+        }
+
+        function VerifyName(){
+
+            var Username = document.getElementById("UserName").value;
+            var Usererror = document.getElementById("UserError");
+
+            if(Username.length<4){
+                UserError.innerHTML = "Name is too short min 4 chars".fontcolor('red');
+            }else{
+                UserError.innerHTML = "";
+            }
+
+            if(Username.length>10){
+                UserError.innerHTML = "Name is too long max 10 chars ". fontcolor('red');
+            }
+
+            if(Username==""){
+                UserError.innerHTML = "Username is required" . fontcolor('red');
+            }
+        
+        }
+    </script>
+</head>
+<body>
+            <dl>
+                <dt>Username</dt>
+                <dd><input onkeyup="VerifyName()" type="text" id="UserName" ></dd>
+                <dd id="UserError"></dd>
+            </dl>
+
+            <button onclick="SubmitClick()">Submit</button>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<script>
+    var categories = ["Electronics" , "Footwear", "Fashion"];
+    categories.push("Basant"); 
+    categories.unshift("All");
+    categories.splice(2,0, "kids", "Men's Clothing");
+    for(var property in categories)
+    {
+            document.write(`[${property}] ${categories[property]} <br>`);
+    }
+
+
+    //Shallow Copy
+    var categories = ["Aman", "Basant" , "Gaurav", "Kids"];
+    var menu = Array.from(categories);
+    document.write(`Categories: ${categories} <br> Menu: ${menu} <br>`);
+
+    //Deep Copy
+    var categories = ["Aman", "Basant" , "Gaurav", "Kids"];
+    var menu = JSON.parse(JSON.stringify(categories));
+    document.write(`Categories: ${categories} <br> Menu: ${menu}`);
+
+
+
+</script>
+
+
+

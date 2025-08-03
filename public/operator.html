@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var margin=0;
+        function MoveClick(){
+            margin += 50;
+            document.getElementById("pic").style.marginLeft = margin + "px";
+
+        }
+
+        function ClearClick(){
+            margin=1;
+            document.getElementById("pic").style.marginLeft = margin+ "px";
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <button onclick="MoveClick()">Move</button>
+        <button onclick="ClearClick()">Clear</button>
+    </div>
+    <div>
+        <img src="images/p1.jpg" id="pic" height="200px" width="150px">
+    </div>
+</body>
+</html>

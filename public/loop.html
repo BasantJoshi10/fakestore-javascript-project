@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var userDetails = {
+            Username : "Basant",
+            Pin : 2001
+            
+        }
+       
+        var count = 0;
+        var maxattempts = 3;
+        var accessGranted = "false";
+        function SubmitClick(){
+            do {
+                var pin = parseInt(document.getElementById("pin").value);
+                if(userDetails.Pin==pin){
+                    document.write("PIN verified Successfully...");
+                    count=0;
+
+                }else{
+                    count++;
+                    if(count>=maxattempts){
+                        document.getElementById("error").innerHTML="Card blocked due to too many attempts".fontcolor("red");
+                    }else{
+                        document.getElementById("error").innerHTML=`You have ${maxattempts-count} attempts left`.fontcolor("red");
+                    }
+                }
+            
+            } while(!accessGranted && count<maxattempts);   
+        }   
+    </script>
+</head>
+<body>
+        <fieldset>
+            <legend>Verify Pin</legend>
+            <div>
+                Your PIN: <input type="text" id="pin"> <button onclick="SubmitClick()">Submit</button>
+            </div>
+            <p aling="center" id="error"></p>
+        </fieldset>
+</body>
+</html>

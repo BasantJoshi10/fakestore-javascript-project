@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+        import {Product} from "../library/modules/product.module.js";
+          function DetailsClick(){ 
+          var obj = new Product(); 
+          obj.Name = document.getElementById("name").value;
+          obj.Price = document.getElementById("price").value;
+          obj.Stock = (document.getElementById("stock").checked==true )?"Available" : "Out of Stock 0.";
+          document.querySelector("p").innerHTML  = ` 
+             Name =  ${obj.Name} <br> 
+             Price = ${obj.Price} <br> 
+             Stock = ${obj.Stock} 
+          ` 
+       } 
+        document.getElementById("btnDetails").addEventListener("click", DetailsClick); 
+        </script>
+</head>
+<body>
+        <dl>
+            <dt>Product Name</dt>
+            <dd><input type="text" id="name"></dd>
+            <dt>Price</dt>
+            <dd><input type="text" id="price"></dd>
+            <dt>Stock</dt>
+            <dd><input type="checkbox" id="stock"></dd>
+        </dl>
+        <button id="btnDetails">GetDetails</button>
+        <p></p>
+</body>
+</html>

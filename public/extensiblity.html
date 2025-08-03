@@ -1,0 +1,48 @@
+<script> 
+    class A //super
+    { 
+         Personal = "Personal Banking Services"; 
+         NRI = "NRI Banking Services"; 
+         Print(){ 
+            document.write(`${this.Personal}<br>${this.NRI}<br>`); 
+         } 
+    } 
+    class B extends A
+    { 
+        Loans = "Car and Personal Loans"; 
+        Print()  
+        { 
+            super.Print(); 
+            document.write(`${this.Loans}`); 
+        } 
+    } 
+    function InstallClick()
+    { 
+        var ver = document.querySelector("select").value; 
+        switch(ver)
+        { 
+            case "ver1": 
+            document.write("<h2>SBI Version-1</h2>"); 
+            let obj1 = new A(); 
+            obj1.Print(); 
+            break; 
+            case "ver2": 
+            document.write("<h2>SBI Version-2</h2>"); 
+            let obj2 = new B(); 
+            obj2.Print(); 
+            break; 
+            default: 
+            document.write("Please Select a Version"); 
+            break; 
+        } 
+    } 
+</script> 
+<body> 
+    <h2>Install Bank App </h2> 
+    <select> 
+        <option>Choose Version</option> 
+        <option value="ver1">Version-1</option> 
+        <option value="ver2">Version-2</option> 
+    </select> 
+    <button onclick="InstallClick()">Install</button> 
+</body>

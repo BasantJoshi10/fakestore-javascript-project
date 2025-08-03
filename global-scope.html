@@ -1,0 +1,19 @@
+<script>
+    "Use Strict"
+    var x=10;
+    let y=20;
+    const z=30;
+    function f1()
+    {
+        //a=100; trun off the strict mode  
+        window.a=100;   // Using window object we can access Global Variable  
+        document.write("Function1=" + "<br>" + x + "<br>" + y + "<br>" + z +"<br>" + a + "<br>");
+    }
+
+    function f2()
+    {
+            document.write("Function2=" +"<br>"+ x + "<br>" + y + "<br>" + z + "<br>"+ a + "<br>");
+    }
+
+    f1();f2();
+</script>

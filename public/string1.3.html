@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function GetDetails(){
+            var email = document.getElementById("Email").value;
+            var atPos = email.indexOf("@");
+            var id = email.substring(atPos,0);
+            var domain = email.substring(atPos+1);
+            document.getElementById("Id").innerHTML = id;
+            document.getElementById("Domain").innerHTML = domain;
+
+        }
+    </script>
+</head>
+<body>
+
+            Your Email <input type="email" onblur="GetDetails()" id="Email">
+            <dl>
+                    <dt>Your ID:- </dt>
+                    <dd id="Id"></dd>
+                    <dt>Your Domain:- </dt>
+                    <dd id="Domain"></dd>
+            </dl>
+</body>
+</html>

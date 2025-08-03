@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify MMobile</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script>
+
+        var regExp = / /;
+        function CountryChanged()
+        {
+            var countryName = document.getElementById("LstCountries").value;
+            var flag = document.getElementById("Flag");
+            var txtMobile = document.getElementById("mobileTxt");
+            var txterror = document.getElementById("txtError");
+            if(countryName=="India"){
+                flag.src= "images/india.jpg"
+                txtMobile.placeholder = "+91 and 10 digits";
+                regExp = /\+91\d{10}/
+            } else if(countryName=="US"){
+                flag.src = "images/us.jpg"
+                txtMobile.placeholder = "+(1)(425) 555-0100";
+                regExp = /\+\(1\)\(\d{3}\)\s\d{3}-\d{4}/; 
+            } else if(countryName=="UK"){
+                flag.src="images/uk.jpg";
+                txtMobile.placeholder= "+(44) (20) 1234 5678";
+                regExp = /\+\(44\)\s\(\d{2}\)\s\d{4}\s\d{4}/;
+            }
+
+        }
+
+        function RegisterClick(){
+
+                var mobile = document.getElementById("mobileTxt").value;
+                var mobileError = document.getElementById("txtError");
+
+
+                if(mobile.match(regExp)){
+                    document.write("Registered");
+                }else{
+            
+                    mobileError.innerHTML = `Invalid Mobile - ${document.getElementById("mobileTxt").placeholder}`;
+                    
+        
+                }
+            }
+        
+    </script>
+</head>
+<body class="container-fluid"> 
+
+    <h2>Verify Mobile</h2>
+    <hr>
+
+    <dl class="w-50">
+        <dt>Your Country</dt>
+        <dd class="input-group">
+            <select id="LstCountries" class="form-select" onchange="CountryChanged()">
+                <option>Select County</option>
+                <option>India</option>
+                <option>US</option>
+                <option>UK</option>
+            </select>
+            <img width="50" width="40" border="1" class="input-group-text" id="Flag">
+        </dd>
+
+        <dt>Your mobile number</dt>
+        <dd><input type="text" class="form-control" id="mobileTxt"  ></dd>
+        <dd id="txtError" class="text-danger"></dd>
+
+    </dl>
+    <button class="btn btn-primary" onclick="RegisterClick()">Submit</button>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function VerifyUser()
+        {
+            var UserName = document.getElementById("UserName").value;
+            var UserError = document.getElementById("UserError");
+
+            if(UserName.charCodeAt(0)>=65 && UserName.charCodeAt(0)<=90){
+                UserError.innerHTML = "";
+            }else{
+                UserError.innerHTML = "Name must be start with UppperCase".fontcolor('red');
+            }
+
+        
+        }
+
+        function VerifyEmail(){
+            var Email = document.getElementById("Email").value;
+            var UserError = document.getElementById("UserError");
+
+            if(Email.indexOf("@") == -1){
+                UserError.innerHTML = "Invalid Email please include @" .fontcolor('red');
+            }else{
+                UserError.innerHTML = " ";
+            }
+        }
+
+    
+    </script>
+</head>
+<body>
+            User Name <input type="Email" onblur="VerifyUser()" id="Email"> <span id="UserError"></span>
+            <br><br>
+            Email <input type="text" id="Email" onblur="VerifyEmail()"> <span id="UserError"></span>
+</body>
+</html>

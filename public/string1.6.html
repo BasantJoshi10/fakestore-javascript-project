@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function SubmitClick(){
+            var email = document.getElementById("email").value;
+            if(email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/))
+            {
+                document.write(`your email is: ${email}`);
+            }
+                else{
+                    alert("pls enter valid email id");
+                }
+            }
+        
+    </script>
+</head>
+<body>
+            Your String:- <input type="email" placeholder="enter your email id" id="email">
+            <button onclick="SubmitClick()">Submit</button>
+</body>
+</html>

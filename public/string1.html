@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script type="text/javascript">
+
+        function RegisterClick()
+        {
+
+            var Username= document.getElementById("UserName").value;
+            var Usererror=document.getElementById("userError").value;
+
+            if(Username==""){
+
+                userError.innerHTML= "Username is required";
+                userError.style.color= "red";
+                userError.style.fontWeight= "Bold";
+
+            }else{
+                document.write("Username is registerd");
+            }
+
+        }
+
+        function IfscClick(){
+
+            var Ifsc = document.getElementById("ifsc").value;
+            document.getElementById("ifsc").value= Ifsc.toUpperCase();
+        }
+
+    </script>
+</head>
+<body>
+            <dl>
+                <dt>Username</dt>
+                <dd><input type="text" id="UserName"></dd>
+                <dd id="userError"></dd>
+            </dl>
+
+
+                <dt>IFSC</dt>
+                <dd><input type="text" id="ifsc" onkeyup="IfscClick()"></dd>    
+
+
+            <button onclick="RegisterClick()">Register</button>
+</body>
+</html>

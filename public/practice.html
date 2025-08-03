@@ -1,0 +1,23 @@
+<script>
+    function findTriangleType(side1,side2,side3){
+        if(side1==side2 && side1==side3)
+        {
+            document.write("its a Equilateral");
+        }
+        else if(side1==side2 || side2==side3 || side1==side3)
+        {
+            document.write("its a Isosceles");
+        }
+        else if(side1!==side2 && side2!==side3 && side1!==side3)
+        {
+            document.write("its a Scalene");
+        }
+        else
+        {
+            document.write("Please provide valid sides");
+        }
+    }
+
+    findTriangleType(5,4,3);
+
+</script>

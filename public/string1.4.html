@@ -1,0 +1,20 @@
+<script>
+    var products = "Samsung TV-46000.44, Nike Casuals-5000.44";
+    var [tv,shoe] = products.split(',');
+    //var [name,price]= shoe.split('-'); 
+    // wihout destructuring
+    var details = shoe.split('-');
+    document.write(`<h2>Product Details</h2>
+        Name: ${shoe.substring(shoe.indexOf("-"), 0)} <br>
+        Price: ${shoe.substring(shoe.indexOf("-")+1)} <br>
+        <hr>
+        Shoe Name: ${details[0]} <br>
+        Shoe Price: ${details[1]}
+
+    
+
+
+`);
+
+
+</script>
